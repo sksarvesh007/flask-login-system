@@ -4,22 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-grid.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-grid.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-reboot.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-reboot.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css.map')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-grid.min.css.map')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-reboot.min.css.map')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css.map')}}">
-    <title>Document</title>
+        <style>
+            body {
+                /* Light mode styles */
+                background-color: #f8f9fa !important;
+                color: #343a40 !important;
+            }
+        
+            .dark-mode body {
+                /* Dark mode styles */
+                background-color: #343a40 !important;
+                color: #ffffff !important;
+            }
+        </style>
+        
+    <title>Formula 1 Dashboard</title>
 </head>
 <body>
-    <h1>hello you are logged in the website , enjoy :) 🥰</h1>
-    <a href="{{url_for('logout')}}"><button type="button" class="btn btn-outline-primary">PRESS HERE TO LOGOUT</button></a>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{url_for('static',filename='images/f1_logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+            Formula 1 Dashboard
+        </a>
+        <a href="{{url_for('logout')}}" class="btn btn-outline-light">Logout</a>
+        <button class="btn btn-outline-light ml-2" id="toggle-mode">Toggle Mode</button>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Welcome to the Formula 1 Dashboard 🏎️</h1>
+        <!-- Add informative content, images, and details about Formula 1 racing here -->
+
+        <!-- Example Image Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <img src="{{url_for('static',filename='images/f1_car.jpg')}}" class="img-fluid" alt="Formula 1 Car">
+            </div>
+            <div class="col-md-6">
+                <p>Explore the thrilling world of Formula 1 racing with exciting images and information about the teams, drivers, and races.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const body = document.body; 
+        const toggleModeButton = document.getElementById('toggle-mode'); // Get the button element with ID 'toggle-mode'
+    
+        toggleModeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode'); 
+        });
+    </script>
+    
 </body>
 </html>

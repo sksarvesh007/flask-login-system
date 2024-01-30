@@ -6,28 +6,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-grid.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-grid.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-reboot.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-reboot.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css.map')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-grid.min.css.map')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-reboot.min.css.map')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css.map')}}">
-    <title>Document</title>
+    <title>Login Page</title>
 </head>
-<body>
-    <h1>LOGIN PAGE </h1>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Login</h1>
+                        <form method="POST" action="">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.username.label(class="form-control-label") }}
+                                {{ form.username(class="form-control", placeholder="Enter your username") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.password.label(class="form-control-label") }}
+                                {{ form.password(class="form-control", placeholder="Enter your password") }}
+                            </div>
+                            {{ form.submit(class="btn btn-primary btn-block") }}
+                        </form>
+                        <a href="{{url_for('register')}}" class="btn btn-outline-primary btn-block mt-3">Don't have an account? Register here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <form method = "POST", action="">
-        {{form.hidden_tag()}}
-        {{form.username.label}}{{form.username()}}<br>
-        {{form.password.label}}{{form.password()}}<br>
-        {{form.submit()}}
-    </form>
-
-    <a href="{{url_for('register')}}"><button type="button" class="btn btn-outline-primary">DONT HAVE AN ACCOUNT ? , REGISTER HERE</button> </a>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
