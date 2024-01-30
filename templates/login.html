@@ -20,6 +20,14 @@
 </head>
 <body>
     <h1>LOGIN PAGE </h1>
+
+    <form method = "POST", action="">
+        {{form.hidden_tag()}}
+        {{form.username.label}}{{form.username()}}<br>
+        {{form.password.label}}{{form.password()}}<br>
+        {{form.submit()}}
+    </form>
+
     <a href="{{url_for('register')}}"><button type="button" class="btn btn-outline-primary">DONT HAVE AN ACCOUNT ? , REGISTER HERE</button> </a>
 </body>
 </html>
