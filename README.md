@@ -1,3 +1,3 @@
 # A flask based formula 1 dashboard website
 
-s
+still needs to be developed
